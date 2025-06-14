@@ -1,83 +1,157 @@
-
+   /* ===========================
+       Reset básico e global
+       =========================== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Dancing Script', cursive;
       background: linear-gradient(135deg, #ffe6f0, #ffe6cc);
-      overflow-x: hidden;
-      position: relative;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
-      text-align: center;
       color: #6a1b4d;
     }
+
+    /* ===========================
+       Decorações de fundo (blur e círculos)
+       =========================== */
     .decoracao {
-      position: absolute;
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.08;
+      background: #6a1b4d;
+      filter: blur(45px);
+      z-index: -1;
+    }
+
+    .decoracao:nth-child(1) {
+      width: 120px;
+      height: 120px;
+      top: 15%;
+      left: 10%;
+    }
+
+    .decoracao:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      top: 75%;
+      right: 15%;
+    }
+
+    .decoracao:nth-child(3) {
       width: 80px;
       height: 80px;
-      background: rgba(255, 192, 203, 0.2);
-      border-radius: 50%;
-      animation: flutuar 18s ease-in-out infinite;
-    }
-    .decoracao:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-    .decoracao:nth-child(2) { top: 50%; left: 80%; animation-delay: 5s; }
-    .decoracao:nth-child(3) { top: 75%; left: 40%; animation-delay: 10s; }
-
-    @keyframes flutuar {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(180deg); }
-      100% { transform: translateY(0) rotate(360deg); }
+      top: 40%;
+      right: 50%;
     }
 
+    /* ===========================
+       Container principal
+       =========================== */
     .container {
-      max-width: 420px;
-      margin: auto;
-      padding: 25px;
-      background: #fff0f5;
-      border-radius: 25px;
-      box-shadow: 0 0 25px rgba(255, 192, 203, 0.4);
-      position: relative;
-      z-index: 1;
+      background: white;
+      max-width: 360px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(106, 27, 77, 0.3);
+      padding: 30px 20px 40px;
+      text-align: center;
     }
 
+    /* ===========================
+       Foto de perfil
+       =========================== */
     .foto-perfil {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
-      border: 4px dashed #f48fb1;
-      margin-bottom: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(106, 27, 77, 0.4);
+      margin-bottom: 20px;
+      border: 3px solid #6a1b4d;
+      transition: transform 0.3s ease;
     }
 
+    .foto-perfil:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===========================
+       Título e descrição
+       =========================== */
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 8px;
-      color: #ad1457;
+      font-size: 2.8rem;
+      margin-bottom: 6px;
     }
 
     p {
-      color: #7b1b4d;
-      margin-bottom: 22px;
-      font-size: 1.1em;
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      font-weight: 500;
+      color: #8b2e69;
     }
 
+    /* ===========================
+       Botões de links
+       =========================== */
     .link-btn {
-      display: block;
-      background: #f48fb1;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #6a1b4d;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.15rem;
       text-decoration: none;
-      margin: 14px 0;
-      padding: 14px;
-      border-radius: 15px;
-      font-weight: bold;
-      font-size: 1em;
-      transition: transform 0.3s ease, background 0.3s ease;
+      padding: 12px 20px;
+      margin: 10px auto;
+      border-radius: 35px;
+      box-shadow: 0 5px 15px rgba(106, 27, 77, 0.4);
+      width: 90%;
+      max-width: 320px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
     }
 
-    .link-btn:hover {
-      background: #ec407a;
-      transform: scale(1.05);
+    .link-btn:hover,
+    .link-btn:focus {
+      background: #8b2e69;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(139, 46, 105, 0.6);
+      outline: none;
+    }
+
+    /* Ícones dentro dos botões */
+    .link-btn i {
+      font-size: 1.3rem;
+    }
+
+    /* ===========================
+       Responsividade para telas menores
+       =========================== */
+    @media (max-width: 400px) {
+      .container {
+        padding: 25px 15px 30px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .link-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+      }
+
+      .foto-perfil {
+        width: 110px;
+        height: 110px;
+      }
     }
