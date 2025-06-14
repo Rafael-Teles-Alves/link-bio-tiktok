@@ -1,0 +1,83 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(135deg, #ffe6f0, #ffe6cc);
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+      color: #6a1b4d;
+    }
+    .decoracao {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 192, 203, 0.2);
+      border-radius: 50%;
+      animation: flutuar 18s ease-in-out infinite;
+    }
+    .decoracao:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+    .decoracao:nth-child(2) { top: 50%; left: 80%; animation-delay: 5s; }
+    .decoracao:nth-child(3) { top: 75%; left: 40%; animation-delay: 10s; }
+
+    @keyframes flutuar {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+
+    .container {
+      max-width: 420px;
+      margin: auto;
+      padding: 25px;
+      background: #fff0f5;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(255, 192, 203, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foto-perfil {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px dashed #f48fb1;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 8px;
+      color: #ad1457;
+    }
+
+    p {
+      color: #7b1b4d;
+      margin-bottom: 22px;
+      font-size: 1.1em;
+    }
+
+    .link-btn {
+      display: block;
+      background: #f48fb1;
+      color: white;
+      text-decoration: none;
+      margin: 14px 0;
+      padding: 14px;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 1em;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .link-btn:hover {
+      background: #ec407a;
+      transform: scale(1.05);
+    }
